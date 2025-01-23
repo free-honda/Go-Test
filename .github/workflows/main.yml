@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - '**/*.go' # Goファイルに変更があった場合のみ実行
 
 jobs:
   build-and-push:
