@@ -11,7 +11,7 @@ func main() {
 
 	// "Hello, World!" を返すハンドラー
 	e.GET("/", func(c echo.Context) error {
-		return c.String(http.StatusOK, "プライベートサブネットのFargateからホスティング中!")
+		return c.String(http.StatusOK, "プライベートサブネットのFargateからホスティング中！！！！！！！！！")
 	})
 
 	// サーバーを起動 (外部アクセス用に 0.0.0.0 にバインド)
