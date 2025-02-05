@@ -11,8 +11,11 @@ RUN go mod download
 # アプリケーションコードをコピー
 COPY . .
 
-# アプリケーションをビルド
-RUN go build -o app
+# アプリケーションをビルド（静的バイナリ化 & 実行権限）
+RUN CGO_ENABLED=0 go build -o app && chmod +x app
+
+# ビルド後のファイル確認
+RUN ls -l app
 
 # コンテナ実行時のエントリーポイント
 CMD ["./app"]
