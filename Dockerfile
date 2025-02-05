@@ -12,10 +12,10 @@ RUN go mod download
 COPY . .
 
 # アプリケーションをビルド（静的バイナリ化 & 実行権限）
-RUN CGO_ENABLED=0 go build -o app && chmod +x app
+RUN CGO_ENABLED=0 GOOS=linux go build -o app && chmod +x app
 
-# ビルド後のファイル確認
+# 実行可能ファイルの存在を確認
 RUN ls -l app
 
-# コンテナ実行時のエントリーポイント（確認）
-CMD ["./app"]
+# コンテナ実行時のエントリーポイント
+ENTRYPOINT ["./app"]
