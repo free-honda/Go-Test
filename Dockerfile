@@ -17,5 +17,5 @@ RUN CGO_ENABLED=0 go build -o app && chmod +x app
 # ビルド後のファイル確認
 RUN ls -l app
 
-# コンテナ実行時のエントリーポイント
+# コンテナ実行時のエントリーポイント（確認）
 CMD ["./app"]
