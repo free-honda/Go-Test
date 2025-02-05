@@ -9,4 +9,4 @@ COPY . .
 
 RUN CGO_ENABLED=0 go build -o app && chmod +x app
 
-ENTRYPOINT ["./app"]
+ENTRYPOINT ["/usr/src/app/app"]
